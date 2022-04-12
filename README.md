@@ -1,2 +1,2 @@
 # repo-tanzil
-Repository untuk tugas kuliah
+Repository untuk tugas kuliah (UAP)
