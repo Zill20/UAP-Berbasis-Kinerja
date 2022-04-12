@@ -1,0 +1,72 @@
+
+a. Selde
+import java.util.Scanner;
+
+public class Solution {
+    public static int angka(int a){
+        int angka = 0, x = a;   
+        while(x!=0){
+            angka = angka*10+(x%10); 
+            x     = x/10; 
+        }
+        return angka; 
+    }
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int balik, terbalik;  
+        balik    = input.nextInt();
+        terbalik = angka(balik); 
+        
+        if(balik==terbalik){
+            System.out.println(balik+" adalah selde.");
+        }else{
+            System.out.println(balik+" bukan selde.");
+        }
+    }  
+ }
+
+b. Surat Kaisar
+import java.util.Scanner;
+
+public class Solution {
+    public static void suratkaisar(String isi, int N){
+        String chipertext="";
+        char huruf;
+
+         for(int i=0; i<isi.length(); i++){
+            huruf = isi.charAt(i); 
+            if((huruf>='a')&&(huruf<='z'))
+            {
+                huruf = (char)(huruf+N);
+                if(huruf>'z'){
+                    huruf = (char)(huruf+'a'-'z'-1); 
+                }
+                chipertext =  chipertext + huruf;
+            }
+            else if((huruf>='A')&&(huruf<='Z'))
+            {
+                huruf = (char)(huruf+N);
+                if(huruf>'Z'){
+                    huruf = (char)(huruf+'A'-'Z'-1); 
+                }
+                 chipertext =  chipertext + huruf;
+            }else
+            {
+                 chipertext =  chipertext + huruf;
+            }            
+        }
+        System.out.print(chipertext);
+    }
+    
+    
+    public static void main(String[] args){
+        Scanner input = new Scanner(System.in);
+        String huruf;
+        int N;
+        
+        huruf = input.nextLine();
+        N = input.nextInt();
+        
+        suratkaisar(huruf, N);
+    }
+}
